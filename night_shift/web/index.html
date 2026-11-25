@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>夜班 · 故障剧本杀</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="noise"></div>
+<header class="top">
+  <div class="brand"><span class="logo">N</span><div><b>夜班</b><small>NIGHT SHIFT / 故障剧本杀</small></div></div>
+  <div class="topmeta"><span id="clock" class="clock">--:--</span><span class="live"><i></i> 值班中</span></div>
+</header>
+
+<main class="layout">
+  <section class="ticket panel">
+    <div class="ticket-head"><span class="kicker">INCIDENT TICKET</span><span id="caseNo" class="case-no">#0001</span></div>
+    <h1 id="title">加载中</h1>
+    <p id="subtitle" class="subtitle"></p>
+    <div class="timer"><span>剩余处置时间</span><b id="timer">--:--</b></div>
+    <pre id="ticket" class="ticket-text"></pre>
+    <div class="brief"><h2>现场简报</h2><ul id="brief"></ul></div>
+  </section>
+
+  <section class="workspace">
+    <div class="panel checks-panel">
+      <div class="panel-head"><h2>现场检查</h2><button id="btnCheck" class="ghost small">重新检查</button></div>
+      <div id="checks" class="checks"></div>
+      <div class="evidence"><div class="evidence-head"><span>证据终端</span><small>每次检查都会留下记录</small></div><pre id="evidence">等待第一次检查…</pre></div>
+    </div>
+
+    <div class="panel actions-panel">
+      <div class="panel-head"><h2>处置</h2><span class="muted">改配置 / 清缓存 / 提交</span></div>
+      <div id="fixBox" class="fixbox"></div>
+      <div class="buttons">
+        <button id="btnHint" class="ghost">要一条线索 <small>-10 分</small></button>
+        <button id="btnSubmit" class="primary">提交结案</button>
+      </div>
+      <div id="hints" class="hints"></div>
+    </div>
+
+    <div id="report" class="panel report hidden"></div>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

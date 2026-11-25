@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "night-shift"
+version = "0.1.0"
+description = "把运维排障做成剧本杀：真实故障、真实验收、自动复盘"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "QKXWX"}]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+
+[project.scripts]
+night-shift = "night_shift.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["night_shift*"]
+
+[tool.setuptools.package-data]
+night_shift = ["web/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E501"]
